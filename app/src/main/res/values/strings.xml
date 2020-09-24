@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Cano Maria Ayelen</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Constraseña</string>
+    <string name="iniciar_sesion">Iniciar Sesion</string>
+    <string name="Registrar">O Registrar</string>
 </resources>
