@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"
-        tools:srcCompat="@drawable/logo" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/editTextUser"
@@ -75,7 +75,7 @@
             android:adjustViewBounds="true"
             android:background="@color/Trasparent"
             android:scaleType="fitCenter"
-            tools:srcCompat="@drawable/facebook" />
+            android:src="@drawable/facebook" />
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:background="@color/Trasparent"
             android:scaleType="fitCenter"
-            tools:srcCompat="@drawable/google" />
+            android:src="@drawable/google" />
     </LinearLayout>
 
 </LinearLayout>
