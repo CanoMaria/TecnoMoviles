@@ -4,4 +4,10 @@
     <string name="pass">Constraseña</string>
     <string name="iniciar_sesion">Iniciar Sesion</string>
     <string name="Registrar">O Registrar</string>
+    <string name="mulan">Mulan</string>
+    <string name="dragon_ball">Dragon Ball</string>
+    <string name="rey_leon">El Rey Leon</string>
+    <string name="sailor_moon">Sailor Moon</string>
+    <string name="cab_zodiaco">Caballeros del Zodiaco</string>
+    <string name="toy_story">Toy Story</string>
 </resources>

@@ -2,8 +2,9 @@ package com.tm.canomariaayelen
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.inicio_sesion.*
 
 class Login:  AppCompatActivity() {
 
@@ -11,10 +12,12 @@ class Login:  AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.inicio_sesion)
 
-        button.setOnClickListener {
-            var i: Intent = Intent (this,MainApp::class.java)
-            startActivity(i)
-        }
+        var loginButton = findViewById<Button>(R.id.button)
+
+        loginButton.setOnClickListener(View.OnClickListener {
+            startActivity( Intent(this@Login,MainApp::class.java)
+            )
+        })
 
     }
 }

@@ -7,31 +7,30 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainApp: AppCompatActivity(){
-        var peliculas:ArrayList<Pelicula>?=null
-        var lista:RecyclerView?= null
-        var layoutManager:RecyclerView.LayoutManager?=null
-        var adaptador:AdaptadorCustom?= null
 
+        val peliculas= mutableListOf<Pelicula>()
         override fun onCreate(savedInstanceState: Bundle?){
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.main)
 
-                peliculas=ArrayList()
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
-                peliculas?.add(Pelicula(nombre = "Mulan", imagen = R.drawable.mulan))
+                val recyclerView : RecyclerView = findViewById<RecyclerView>(R.id.lista)  //encuentro el recyclerView
+                recyclerView.setLayoutManager(LinearLayoutManager(this))
+                recyclerView.adapter = Adapter(cargarPelis())
 
-                lista= findViewById(R.id.lista)
-                layoutManager=LinearLayoutManager(this)
-                adaptador = AdaptadorCustom(peliculas!!)
-                lista?.layoutManager=layoutManager
-                lista?.adapter=adaptador
+
+
         }
+
+    private fun cargarPelis(): List<Pelicula> {
+
+        peliculas.add(Pelicula(nombre = getString(R.string.mulan), imagen = R.drawable.mulan))
+        peliculas.add(Pelicula(nombre = getString(R.string.cab_zodiaco), imagen = R.drawable.caballeros_zodiaco))
+        peliculas.add(Pelicula(nombre = getString(R.string.rey_leon), imagen = R.drawable.rey_leon))
+        peliculas.add(Pelicula(nombre = getString(R.string.dragon_ball), imagen = R.drawable.dragon_ball))
+        peliculas.add(Pelicula(nombre = getString(R.string.sailor_moon), imagen = R.drawable.sailor_moon))
+        peliculas.add(Pelicula(nombre = getString(R.string.toy_story), imagen = R.drawable.toy_story))
+        return peliculas
+    }
 
 
 }
