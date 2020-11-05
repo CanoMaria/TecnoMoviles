@@ -1,7 +1,6 @@
 package com.tm.canomariaayelen;
 
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -9,15 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 class MainApp: AppCompatActivity(){
 
         val peliculas= mutableListOf<Pelicula>()
+
         override fun onCreate(savedInstanceState: Bundle?){
                 super.onCreate(savedInstanceState)
-                setContentView(R.layout.main)
+                setContentView(R.layout.activ_main)
 
                 val recyclerView : RecyclerView = findViewById<RecyclerView>(R.id.lista)  //encuentro el recyclerView
                 recyclerView.setLayoutManager(LinearLayoutManager(this))
                 recyclerView.adapter = Adapter(cargarPelis())
-
-
 
         }
 

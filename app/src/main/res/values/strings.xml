@@ -10,4 +10,9 @@
     <string name="sailor_moon">Sailor Moon</string>
     <string name="cab_zodiaco">Caballeros del Zodiaco</string>
     <string name="toy_story">Toy Story</string>
+    <string name="registrate">Registrate</string>
+    <string name="Nombre">Nombre</string>
+    <string name="NombreApellido">Nombre y Apellido</string>
+    <string name="email">Email</string>
+    <string name="passRepeat">Repetir Contraseña</string>
 </resources>
