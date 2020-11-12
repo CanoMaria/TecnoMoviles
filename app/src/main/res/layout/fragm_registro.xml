@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="50dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -61,6 +61,8 @@
             android:ems="10"
             android:hint="@string/pass"
             android:inputType="textPassword"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             />
         <EditText
             android:id="@+id/contraseñaII"
@@ -74,12 +76,12 @@
             android:inputType="textPassword"
             />
         <Button
-            android:id="@+id/loginbutton"
+            android:id="@+id/guardarRegistro"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="80dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/button_style"
             android:textSize="20sp"
-            android:text="@string/iniciar_sesion" />
+            android:text="@string/Registrarse" />
     </LinearLayout>
 </RelativeLayout>

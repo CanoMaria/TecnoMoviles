@@ -15,4 +15,5 @@
     <string name="NombreApellido">Nombre y Apellido</string>
     <string name="email">Email</string>
     <string name="passRepeat">Repetir Contraseña</string>
+    <string name="Registrarse">Registrarse</string>
 </resources>
