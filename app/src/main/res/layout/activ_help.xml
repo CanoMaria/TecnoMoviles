@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_loging"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="#FF9800"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title=""
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:adjustViewBounds="true"
+                android:background="@color/Trasparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo"
+                tools:ignore="MissingConstraints" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/enviar_correo"
+            android:textSize="36sp"
+            android:textColor="@color/blanco"
+            android:background="@color/morado"
+            android:gravity="center_horizontal" />
+
+        <EditText
+            android:id="@+id/remitente"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/layout_style"
+            android:ems="10"
+            android:hint="@string/NombreApellido" />
+        <EditText
+            android:id="@+id/asunto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/layout_style"
+            android:ems="10"
+            android:hint="@string/asunto" />
+        <EditText
+            android:id="@+id/mensaje"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/layout_style"
+            android:ems="10"
+            android:inputType="textLongMessage"
+            android:hint="@string/mensaje" />
+
+        <Button
+            android:id="@+id/enviarCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/button_style"
+            android:textSize="20sp"
+            android:text="@string/Enviar" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

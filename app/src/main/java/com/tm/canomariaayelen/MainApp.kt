@@ -1,9 +1,14 @@
 package com.tm.canomariaayelen;
 
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.util.Log.d
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
@@ -29,9 +34,38 @@ import kotlin.collections.ArrayList
 
 class MainApp: AppCompatActivity() {
         val context = this
-           override fun onCreate(savedInstanceState: Bundle?){
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu);
+        return true
+    }
+
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Cerrar Sesion")
+        builder.setMessage("Estas seguro que deseas cerrar sesion?")
+        builder.setPositiveButton("Aceptar"){
+                dialogInterface : DialogInterface, i :Int -> super.onBackPressed()
+        }
+        builder.setNegativeButton ("Cancelar"){
+                dialogInterface : DialogInterface, i :Int ->
+        }
+        builder.show()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId;
+        if (id == R.id.Ayuda){
+            startActivity( Intent(this@MainApp,Help::class.java))
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    override fun onCreate(savedInstanceState: Bundle?){
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.activ_main)
+                setSupportActionBar(findViewById(R.id.toolbar))
+                supportActionBar?.setDisplayShowTitleEnabled(false) //indico a la toolbar que no quiero que se meustre el nombre
 
            // val url = "https://api.themoviedb.org/3/discover/movie?api_key=32032564978a1c288fa5874397c2a0bf"
            // AsyncTaskHandleJson().execute(url)
@@ -65,55 +99,12 @@ class MainApp: AppCompatActivity() {
         })
     }
 
- /*
-
-
-  private fun cargarPelis(): List<Pelicula> {
-       peliculas.add(
-           Pelicula(
-               nombre = getString(R.string.mulan),
-               imagen = R.drawable.mulan
-           )
-       )
-       peliculas.add(
-           Pelicula(
-               nombre = getString(R.string.cab_zodiaco),
-               imagen = R.drawable.caballeros_zodiaco
-           )
-       )
-       peliculas.add(
-           Pelicula(
-               nombre = getString(R.string.rey_leon),
-               imagen = R.drawable.rey_leon
-           )
-       )
-       peliculas.add(
-           Pelicula(
-               nombre = getString(R.string.dragon_ball),
-               imagen = R.drawable.dragon_ball
-           )
-       )
-       peliculas.add(
-           Pelicula(
-               nombre = getString(R.string.sailor_moon),
-               imagen = R.drawable.sailor_moon
-           )
-       )
-       peliculas.add(
-           Pelicula(
-               nombre = getString(R.string.toy_story),
-               imagen = R.drawable.toy_story
-           )
-       )
-       return peliculas
-   }*/
-
-
 }
 
 
 
-/*class AsyncTaskHandleJson() : AsyncTask<String, String, String>() {
+/*-----Funcion de AsyncTask que no funciona-------------------
+class AsyncTaskHandleJson() : AsyncTask<String, String, String>() {
 
 
     override fun doInBackground(vararg url: String?): String {
